@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF ULTIMATE HACK // KEN_SKIBIDI</title>
+    <style>
+        :root {
+            --primary: #00ff41;
+            --bg: #050505;
+            --glass: rgba(20, 20, 20, 0.85);
+            --border: 1px solid rgba(0, 255, 65, 0.3);
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--primary);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: radial-gradient(circle at 50% 50%, #112211 0%, #000 100%);
+        }
+        .container {
+            width: 90%;
+            max-width: 500px;
+            background: var(--glass);
+            border: var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px var(--primary);
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+            opacity: 0.8;
+        }
+        input {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #333;
+            color: #fff;
+            padding: 12px;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-family: monospace;
+            outline: none;
+            transition: 0.3s;
+        }
+        input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 8px rgba(0, 255, 65, 0.4);
+        }
+        .status-bar {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            border: 1px solid #333;
+        }
+        .btn-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        button {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        button:hover {
+            background: var(--primary);
+            color: #000;
+            box-shadow: 0 0 15px var(--primary);
+        }
+        button:active {
+            transform: scale(0.98);
+        }
+        .full-width {
+            grid-column: span 2;
+        }
+        .toggle-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #333;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .active .toggle-indicator {
+            background: var(--primary);
+            box-shadow: 0 0 5px var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>FF CACHE INJECTOR v4.0</h1>
+    
+    <div class="input-group">
+        <label>USERNAME / KEY</label>
+        <input type="text" value="ken_skibidi" id="userKey" readonly>
+    </div>
+    
+    <div class="input-group">
+        <label>PLAYER ID</label>
+        <input type="number" placeholder="Nhập ID người chơi để lock" id="playerId">
+    </div>
+
+    <div class="status-bar" id="consoleLog">
+        <span class="toggle-indicator"></span> SYSTEM: Chờ kết nối server cache...
+    </div>
+
+    <div class="btn-grid">
+        <button onclick="activateHack('aimlock')" id="btn-aim">
+            <span class="toggle-indicator"></span> Aimlock 80%
+        </button>
+        <button onclick="activateHack('smooth')" id="btn-smooth">
+            <span class="toggle-indicator"></span> No Jerk / Smooth
+        </button>
+        <button onclick="activateHack('graphics')" id="btn-graph">
+            <span class="toggle-indicator"></span> Xóa Cây/Cỏ (Lag Fix)
+        </button>
+        <button onclick="activateHack('fps')" id="btn-fps">
+            <span class="toggle-indicator"></span> FPS 120 Force
+        </button>
+        <button onclick="activateHack('antiban')" id="btn-ban" class="full-width">
+            <span class="toggle-indicator"></span> ANTI-BAN 100% (Inject Cache)
+        </button>
+        <button onclick="launchGame()" class="full-width" style="background: var(--primary); color: #000;">
+            VÀO GAME FREE FIRE
+        </button>
+    </div>
+</div>
+
+<script>
+    const log = document.getElementById('consoleLog');
+    const userKey = document.getElementById('userKey');
+    
+    function logMessage(msg) {
+        log.innerHTML = `<span class="toggle-indicator" style="background:var(--primary)"></span> [${new Date().toLocaleTimeString()}] ${msg}`;
+    }
+
+    function activateHack(type) {
+        const btn = document.getElementById(`btn-${type}`);
+        const status = btn.classList.contains('active');
+        
+        if (!status) {
+            btn.classList.add('active');
+            let message = "";
+            switch(type) {
+                case 'aimlock':
+                    message = "Aimlock đã kích hoạt: Kéo tâm 80%, trọng lượng nhẹ, không giật.";
+                    break;
+                case 'smooth':
+                    message = "Giao thức Smooth Aim: Loại bỏ jitter, tâm súng mượt mà.";
+                    break;
+                case 'graphics':
+                    message = "Đang xóa texture cây/cỏ từ bộ nhớ cache. FPS tăng vọt.";
+                    break;
+                case 'fps':
+                    message = "Đã ép FPS 120. Giới hạn khung hình đã bị bỏ qua.";
+                    break;
+                case 'antiban':
+                    message = "Đã inject file cache gốc của FF. Anti-ban 100% đang hoạt động.";
+                    break;
+            }
+            logMessage(message);
+            console.log(`Injecting ${type} payload for user: ${userKey.value}...`);
+        } else {
+            btn.classList.remove('active');
+            logMessage(`Tắt tính năng: ${type}.`);
+        }
+    }
+
+    function launchGame() {
+        if (!document.getElementById('playerId').value) {
+            logMessage("Lỗi: Vui lòng nhập ID người chơi để bắt đầu can thiệp.");
+            return;
+        }
+        logMessage("Đang khởi động Free Fire và áp dụng các patch...");
+        setTimeout(() => {
+            logMessage("SUCCESS: Đã can thiệp vào game. Chúc mừng Ken_Skibidi!");
+        }, 1500);
+    }
+</script>
+
+</body>
+</html>
